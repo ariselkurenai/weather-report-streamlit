@@ -234,8 +234,12 @@ try:
         st.divider()
 
         t3, t4 = st.columns(2)
-        with t3: st.metric("📈 预报期内最高温", taf["预报期内最高温"])
-        with t4: st.metric("📉 预报期内最低温", taf["预报期内最低温"])
+        with t3:
+            st.markdown("**📈 预报期内最高温**")
+            st.info(taf["预报期内最高温"])
+        with t4:
+            st.markdown("**📉 预报期内最低温**")
+            st.info(taf["预报期内最低温"])
 
 except requests.exceptions.RequestException as e:
     st.error(f"网络请求失败: {e}")
