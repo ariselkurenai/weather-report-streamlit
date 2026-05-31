@@ -177,8 +177,8 @@ st.set_page_config(page_title="机场气象报文解码", page_icon="🌤️", l
 # 缩小解码信息字体的 CSS
 st.markdown("""
 <style>
-    div[data-testid="metric-container"] label p { font-size: 0.8rem !important; }
-    div[data-testid="metric-container"] div[data-testid="metric-value"] { font-size: 1.2rem !important; }
+    div[data-testid="metric-container"] label p { font-size: 0.65rem !important; }
+    div[data-testid="metric-container"] div[data-testid="metric-value"] { font-size: 1.0rem !important; }
 </style>
 """, unsafe_allow_html=True)
 
