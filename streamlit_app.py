@@ -177,8 +177,12 @@ st.set_page_config(page_title="机场气象报文解码", page_icon="🌤️", l
 # 缩小解码信息字体的 CSS
 st.markdown("""
 <style>
-    div[data-testid="metric-container"] label p { font-size: 0.65rem !important; }
-    div[data-testid="metric-container"] div[data-testid="metric-value"] { font-size: 1.0rem !important; }
+    /* 缩小 metric 字体 */
+    div[data-testid="metric-container"] label p { font-size: 0.8rem !important; }
+    div[data-testid="metric-container"] div[data-testid="metric-value"] { font-size: 1.2rem !important; }
+    /* info 框白底黑字 */
+    div.stAlert { background-color: #ffffff !important; border: 1px solid #e0e0e0 !important; }
+    div.stAlert p { color: #000000 !important; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -229,7 +233,9 @@ try:
 
         t1, t2 = st.columns(2)
         with t1: st.metric("预报发布时间", taf["预报发布时间"][:16])
-        with t2: st.metric("预报有效期", taf["预报有效期"])
+        with t2:
+            st.markdown("**预报有效期**")
+            st.info(taf["预报有效期"])
 
         st.divider()
 
